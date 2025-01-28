@@ -13,6 +13,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// different type of routes
+// Route::get();
+// Route::post();
+// Route::put();
+// Route::patch();
+// Route::delete();
+// Route::options();
+// Route::match();
+// Roote::any();
+
+//resources/views/about or any pages
+// Route::get('/', function () {
+//     return view('about');
+// });
+
+// Route::view('/', 'about');
+
+// Route::any('/', function(){
+//     return 'about';
+// });
+
+Route::get('/', function(){
+    return 'redirected';
 });
+
+Route::redirect('/welcome', '/');

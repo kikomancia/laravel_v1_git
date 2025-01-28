@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>HELLO NGA JAN!</h1>
+    <h1>You are in about page!</h1>
 </body>
 </html>
