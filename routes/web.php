@@ -30,12 +30,12 @@ use Illuminate\Support\Facades\Route;
 
 // Route::view('/', 'about');
 
-// Route::any('/', function(){
-//     return 'about';
-// });
-
-Route::get('/', function(){
-    return 'redirected';
+Route::any('/', function(){
+    return 'about';
 });
 
-Route::redirect('/welcome', '/');
+// Route::get('/', function(){
+//     return 'redirected';
+// });
+
+// Route::redirect('/welcome', '/');
