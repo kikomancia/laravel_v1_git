@@ -1,6 +1,8 @@
 <?php
 
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,12 +32,23 @@ use Illuminate\Support\Facades\Route;
 
 // Route::view('/', 'about');
 
-Route::any('/', function(){
-    return 'about';
-});
-
-// Route::get('/', function(){
-//     return 'redirected';
+// Route::any('/', function(){
+//     return 'about';
 // });
 
-// Route::redirect('/welcome', '/');
+Route::get('/', function(){
+    return 'welcome!';
+});
+
+// Route::get('/get-text', function(){
+//     return response('Hello kikomans!', 200)
+//              ->header('content-Type', 'text/plain');
+// });
+
+Route::get('/user/{id}', function($id){
+    return response($id, 200);
+});
+
+Route::get('/jsonResponse', function(){
+    return response()->json(['name' => 'Kikomans', 'age' => '22']);
+});
