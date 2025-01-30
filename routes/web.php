@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 // use Illuminate\Http\Request;
@@ -37,7 +38,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function(){
-    return 'welcome!';
+    return view('welcome');
 });
 
 // Route::get('/get-text', function(){
@@ -49,6 +50,15 @@ Route::get('/user/{id}', function($id){
     return response($id, 200);
 });
 
+//json attack
 Route::get('/jsonResponse', function(){
     return response()->json(['name' => 'Kikomans', 'age' => '22']);
 });
+
+
+//data or function from the controller 
+Route::get('/users', [UserController::class, 'index']);
+
+
+//trowing USER INPUTS FROM URL
+Route::get('user/{id}', [UserController::class, 'show']);
