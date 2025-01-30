@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 // use Illuminate\Http\Request;
 
@@ -60,6 +61,26 @@ Route::get('/jsonResponse', function(){
 Route::get('/users', [UserController::class, 'index']);
 
 
-////trowing USER INPUTS FROM URL
+
+// trowing USER INPUTS FROM URL
 // *NOTE same name with views filename
+// userDataView - is the views filename
+// show - is the function froom the controller that is added
+
+// Route::get('userDataView/{id}', [UserController::class, 'show']);
+
+
+
+
+//This where you wanted to redirect user if they are not authenticated or walang users account
+// add lang this ---  ->name('login') to direct here
+Route::get('/loginPage', [UserController::class, 'loginCont'])->name('login');
+
+
+//with authentication using middleware 
+// every page must have middleware auth [->middleware('auth')]
+// Route::get('userDataView/{id}', [UserController::class, 'show'])->middleware('auth');
+
+
+//open for access with no authentication from the users
 Route::get('userDataView/{id}', [UserController::class, 'show']);
