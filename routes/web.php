@@ -71,7 +71,6 @@ Route::get('/users', [UserController::class, 'index']);
 
 
 
-
 //This where you wanted to redirect user if they are not authenticated or walang users account
 // add lang this ---  ->name('login') to direct here
 Route::get('/loginPage', [UserController::class, 'loginCont'])->name('login');
