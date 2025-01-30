@@ -82,4 +82,5 @@ Route::get('/loginPage', [UserController::class, 'loginCont'])->name('login');
 
 
 //open for access with no authentication from the users
+//show is the functions
 Route::get('userDataView/{id}', [UserController::class, 'show']);
