@@ -60,5 +60,6 @@ Route::get('/jsonResponse', function(){
 Route::get('/users', [UserController::class, 'index']);
 
 
-//trowing USER INPUTS FROM URL
-Route::get('user/{id}', [UserController::class, 'show']);
+////trowing USER INPUTS FROM URL
+// *NOTE same name with views filename
+Route::get('userDataView/{id}', [UserController::class, 'show']);
