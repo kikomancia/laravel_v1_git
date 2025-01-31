@@ -62,18 +62,18 @@ Route::get('/users', [UserController::class, 'index']);
 
 
 
-// trowing USER INPUTS FROM URL
+// throwing USER INPUTS FROM URL
 // *NOTE same name with views filename
 // userDataView - is the views filename
-// show - is the function froom the controller that is added
+// show - is the function from the controller that is added
 
 // Route::get('userDataView/{id}', [UserController::class, 'show']);
 
 
 
-//This where you wanted to redirect user if they are not authenticated or walang users account
-// add lang this ---  ->name('login') to direct here
-Route::get('/loginPage', [UserController::class, 'loginCont'])->name('login');
+// //This where you wanted to redirect user if they are not authenticated or walang users account
+// // add lang this ---  ->name('login') to direct here
+// Route::get('/loginPage', [UserController::class, 'landingPageFunction'])->name('login');
 
 
 //with authentication using middleware 
@@ -81,12 +81,15 @@ Route::get('/loginPage', [UserController::class, 'loginCont'])->name('login');
 // Route::get('userDataView/{id}', [UserController::class, 'show'])->middleware('auth');
 
 
-//open for access with no authentication from the users
-// showUsingWith is the functions
-Route::get('userDataView/{id}', [UserController::class, 'showUsingWith']);
+
+///// LANDING PAGE IF NOT AUTHENTICATED
+//Route::get('/landingPage', [UserController::class, 'landingPageFunction'])->name('login');
+Route::get('/landingPage', [UserController::class, 'landingPageFunction']);
 
 //// USING ARRAY METHOD ///
+//Route::get('arrayMethod/{id}', [UserController::class, 'arrayFunction'])->middleware('auth');
 Route::get('arrayMethod/{id}', [UserController::class, 'arrayFunction']);
 
 //// USING WITH METHOD TO FETCH DATA FROM THE CONTROLLER /////
+//Route::get('withMethod/{id}', [UserController::class, 'withFunction'])->middleware('auth');
 Route::get('withMethod/{id}', [UserController::class, 'withFunction']);

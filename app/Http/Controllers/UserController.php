@@ -6,34 +6,24 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index(){
-        return 'Hello if this show, then goods!';
+    public function index()
+    {
+        return 'default text!';
     }
 
 
-    public function loginCont(){
-        // return 'Hello welcom to login page!';
+    public function landingPageFunction()
+    {
+        //landingPage is the landing page hehe if not authenticated
+        return view('landingPage')
+            ->with('message', 'If this page show meaning data authentication is on.');
 
-        $loginData = array(
-
-            "name"      => "Welcome back!",
-            "remind"    => "Forgot password?"
-        );
-
-        return view('loginPage', $loginData);
+        // return view('landingPage');
     }
-
-
-    // //data from url
-    // public function show($id){
-    //     return $id;
-    // }
-
-
-
 
     // ARRAY MEHTOD
-    public function arrayFunction($id){
+    public function arrayFunction($id)
+    {
 
         $usersArray = array(
             "id"        => $id,
@@ -52,15 +42,15 @@ class UserController extends Controller
 
 
     //using -> with method to display data
-    public function withFunction($id){
+    public function withFunction($id)
+    {
 
         return view('withMethod')
-                -> with('id', $id)
-                -> with('title', 'with() method')
-                -> with('name', 'Kikomans')
-                -> with('age', '25')
-                -> with('address', 'muntinlupa city')
-                -> with('email', 'Kikomans@gmail.com');
-
+            ->with('id', $id)
+            ->with('title', 'with() method')
+            ->with('name', 'Kikomans')
+            ->with('age', '25')
+            ->with('address', 'muntinlupa city')
+            ->with('email', 'Kikomans@gmail.com');
     }
 }

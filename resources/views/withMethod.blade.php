@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>USING WITH METHOD</title>
+    <title> -> WITH() METHOD</title>
 
     <style>
-        table, th, td {
-          border:1px solid black;
-          text-align: center;
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+
         }
-        
-        </style>
+
+       
+    </style>
 
 </head>
 
 <body>
-    <h1>{{ $title }}</h1>
+    <h1 class="redme">{{ $title }}</h1>
 
     <p>I am using -> with method to call data from the controller</p>
 
@@ -30,11 +34,11 @@
             <th>email</th>
         </tr>
         <tr>
-            <td>{{$id}}</td>
-            <td>{{$name}}</td>
-            <td>{{$age}}</td>
-            <td>{{$address}}</td>
-            <td>{{$email}}</td>
+            <td>{{ $id }}</td>
+            <td>{{ $name }}</td>
+            <td>{{ $age }}</td>
+            <td>{{ $address }}</td>
+            <td>{{ $email }}</td>
         </tr>
 
     </table>
