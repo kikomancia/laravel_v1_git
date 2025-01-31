@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,9 +39,9 @@ use Illuminate\Support\Facades\Route;
 //     return 'about';
 // });
 
-Route::get('/', function(){
-    return view('welcome');
-});
+// Route::get('/', function(){
+//     return view('welcome');
+// });
 
 // Route::get('/get-text', function(){
 //     return response('Hello kikomans!', 200)
@@ -92,3 +93,6 @@ Route::get('withMethod/{id}', [UserController::class, 'withFunction']);
 
 //// USING MySQL METHOD TO FETCH DATA FROM THE CONTROLLER FROM DATABASE /////
 Route::get('databaseMethod', [UserController::class, 'databaseFunction']);
+
+
+Route::get('/', [StudentController::class, 'studentFunctions']);
