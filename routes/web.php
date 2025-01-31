@@ -60,16 +60,12 @@ Route::get('/jsonResponse', function(){
 //data or function from the controller 
 Route::get('/users', [UserController::class, 'index']);
 
-
-
 // throwing USER INPUTS FROM URL
 // *NOTE same name with views filename
 // userDataView - is the views filename
 // show - is the function from the controller that is added
 
 // Route::get('userDataView/{id}', [UserController::class, 'show']);
-
-
 
 // //This where you wanted to redirect user if they are not authenticated or walang users account
 // // add lang this ---  ->name('login') to direct here
@@ -93,3 +89,6 @@ Route::get('arrayMethod/{id}', [UserController::class, 'arrayFunction']);
 //// USING WITH METHOD TO FETCH DATA FROM THE CONTROLLER /////
 //Route::get('withMethod/{id}', [UserController::class, 'withFunction'])->middleware('auth');
 Route::get('withMethod/{id}', [UserController::class, 'withFunction']);
+
+//// USING MySQL METHOD TO FETCH DATA FROM THE CONTROLLER FROM DATABASE /////
+Route::get('databaseMethod', [UserController::class, 'databaseFunction']);

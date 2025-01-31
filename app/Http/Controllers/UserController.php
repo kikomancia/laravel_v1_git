@@ -53,4 +53,14 @@ class UserController extends Controller
             ->with('address', 'muntinlupa city')
             ->with('email', 'Kikomans@gmail.com');
     }
+
+
+
+    // using MySQL data fetching
+    public function databaseFunction()
+    {
+        return view('databaseMethod')
+                -> with('message', 'Hello from the other side!');
+    }
+
 }
