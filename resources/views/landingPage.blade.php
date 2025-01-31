@@ -11,7 +11,7 @@
     <center>
 
         <h1 style="color: red">SORRY NOT ALLOWED!</h1>
-        <p>{{$message}}</p>
+        <p>If you see this page meaning you are NOT authenticated.</p>
 
     </center>
 </body>

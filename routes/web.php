@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\studentsController;
 use App\Http\Controllers\UserController;
@@ -79,11 +80,9 @@ Route::get('/users', [UserController::class, 'index']);
 // every page must have middleware auth [->middleware('auth')]
 // Route::get('userDataView/{id}', [UserController::class, 'show'])->middleware('auth');
 
-
-
 ///// LANDING PAGE IF NOT AUTHENTICATED
-//Route::get('/landingPage', [UserController::class, 'landingPageFunction'])->name('login');
-Route::get('/landingPage', [UserController::class, 'landingPageFunction']);
+Route::get('/landingPage', [UserController::class, 'landingPageFunction'])->name('login');
+//Route::get('/landingPage', [UserController::class, 'landingPageFunction']);
 
 //// USING ARRAY METHOD ///
 //Route::get('arrayMethod/{id}', [UserController::class, 'arrayFunction'])->middleware('auth');
@@ -94,7 +93,9 @@ Route::get('arrayMethod/{id}', [UserController::class, 'arrayFunction']);
 Route::get('withMethod/{id}', [UserController::class, 'withFunction']);
 
 //// USING MySQL METHOD TO FETCH DATA FROM THE CONTROLLER FROM DATABASE /////
-Route::get('databaseMethod', [UserController::class, 'databaseFunction']);
+Route::get('databaseMethod', [Controller::class, 'errorHandlingAuth']) -> middleware('auth');
+//Route::get('databaseMethod', [UserController::class, 'databaseFunction']);
 
 
-Route::get('/', [studentsController::class, 'studentsFunction']);
+//Route::get('/', [Controller::class, 'defaultPage']) -> middleware('auth');
+Route::get('/', [Controller::class, 'defaultPage']);

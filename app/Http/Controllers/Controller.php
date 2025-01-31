@@ -10,4 +10,13 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+
+    public function defaultPage(){
+
+        return view('index')
+            ->with('title', 'Hello Tao!')
+            ->with('message', 'This is the index or default page of the Larvel project.') ;
+    }
+
 }

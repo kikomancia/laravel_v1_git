@@ -16,7 +16,8 @@ class UserController extends Controller
     {
         //landingPage is the landing page hehe if not authenticated
         return view('landingPage')
-            ->with('message', 'If this page show meaning data authentication is on.');
+            ->with('title', 'Hello!')
+            ->with('message', 'This is the index or default page of the Larvel I make.') ;
 
         // return view('landingPage');
     }
