@@ -30,34 +30,37 @@ class UserController extends Controller
     // }
 
 
-    //dummy data using array[]
-    public function show($id){
 
-        $usersData = array(
+
+    // ARRAY MEHTOD
+    public function arrayFunction($id){
+
+        $usersArray = array(
             "id"        => $id,
+            "title"     => "Using array method",
             "name"      => "kiko mancia",
             "age"       => 31,
             "address"   => "231 Bayanan Muntinlupa City",
-            "email"     => "kokomonrado@gmail.com",
-            "contact" => "09101012655"
+            "email"     => "kikomans@kiko.com",
         );
 
         //// FETCHING AND DISPLAYING DATA INSIDE CONTROLLER
         //return view('userDataView', ['usersData' => $usersData]);
 
-        //// FETCHING AND DISPLAYING DATA FROM DATABASE
-        return view('userDataView',  $usersData);
+        return view('arrayMethod',  $usersArray);
     }
 
 
-    public function showUsingWith($id){
+    //using -> with method to display data
+    public function withFunction($id){
 
-        return view('userDataView')
+        return view('withMethod')
+                -> with('id', $id)
+                -> with('title', 'with() method')
                 -> with('name', 'Kikomans')
-                -> with('age', 'Kikomans')
-                -> with('address', 'muntinlupa')
-                -> with('email', 'Kikomans@gmail.com')
-                -> with('contact', '0910101226454');
+                -> with('age', '25')
+                -> with('address', 'muntinlupa city')
+                -> with('email', 'Kikomans@gmail.com');
 
     }
 }

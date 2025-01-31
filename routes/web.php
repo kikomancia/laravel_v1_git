@@ -82,5 +82,11 @@ Route::get('/loginPage', [UserController::class, 'loginCont'])->name('login');
 
 
 //open for access with no authentication from the users
-//show is the functions
-Route::get('userDataView/{id}', [UserController::class, 'show']);
+// showUsingWith is the functions
+Route::get('userDataView/{id}', [UserController::class, 'showUsingWith']);
+
+//// USING ARRAY METHOD ///
+Route::get('arrayMethod/{id}', [UserController::class, 'arrayFunction']);
+
+//// USING WITH METHOD TO FETCH DATA FROM THE CONTROLLER /////
+Route::get('withMethod/{id}', [UserController::class, 'withFunction']);
