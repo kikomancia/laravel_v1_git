@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\studentsController;
 use App\Http\Controllers\UserController;
+use App\Models\studentsModel;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -95,4 +97,4 @@ Route::get('withMethod/{id}', [UserController::class, 'withFunction']);
 Route::get('databaseMethod', [UserController::class, 'databaseFunction']);
 
 
-Route::get('/', [StudentController::class, 'studentFunctions']);
+Route::get('/', [studentsController::class, 'studentsFunction']);
