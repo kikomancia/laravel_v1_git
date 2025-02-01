@@ -93,7 +93,7 @@ Route::get('arrayMethod/{id}', [UserController::class, 'arrayFunction']);
 Route::get('withMethod/{id}', [UserController::class, 'withFunction']);
 
 //// USING MySQL METHOD TO FETCH DATA FROM THE CONTROLLER FROM DATABASE /////
-Route::get('databaseMethod', [Controller::class, 'errorHandlingAuth']) -> middleware('auth');
+Route::get('databaseMethod', [Controller::class, 'errorHandlingAuth']);
 //Route::get('databaseMethod', [UserController::class, 'databaseFunction']);
 
 

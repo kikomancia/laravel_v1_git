@@ -64,4 +64,6 @@ class UserController extends Controller
                 -> with('message', 'Hello from the other side!');
     }
 
+    
+
 }
