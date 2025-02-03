@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\emp_controller;
 use App\Http\Controllers\employee_cont;
 use App\Http\Controllers\employee_controller;
 use App\Http\Controllers\StudentController;
@@ -102,4 +103,4 @@ Route::get('databaseMethod', [Controller::class, 'errorHandlingAuth']);
 //Route::get('/', [Controller::class, 'defaultPage']) -> middleware('auth');
 Route::get('/', [Controller::class, 'defaultPage']);
 
-Route::get('/employee', [employee_controller::class, 'empFunctions']);
+Route::get('/emp_view', [emp_controller::class, 'empFunctions']);
