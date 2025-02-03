@@ -103,4 +103,4 @@ Route::get('databaseMethod', [Controller::class, 'errorHandlingAuth']);
 //Route::get('/', [Controller::class, 'defaultPage']) -> middleware('auth');
 Route::get('/', [Controller::class, 'defaultPage']);
 
-Route::get('/emp_view', [emp_controller::class, 'empFunctions']);
+Route::get('/students', [StudentController::class, 'index']);
