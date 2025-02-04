@@ -103,4 +103,8 @@ Route::get('databaseMethod', [Controller::class, 'errorHandlingAuth']);
 //Route::get('/', [Controller::class, 'defaultPage']) -> middleware('auth');
 Route::get('/', [Controller::class, 'defaultPage']);
 
-Route::get('/students', [StudentController::class, 'index']);
+// ///// normal fetching of data
+ //Route::get('/students', [StudentController::class, 'index']);
+
+///get ID in URL for where condition
+Route::get('/students/{id}', [StudentController::class, 'fetchID']);
