@@ -9,12 +9,12 @@
 
 <body>
     @foreach ($students as $student)
-        {{-- <li>
-            <a href=""> {{ $student->first_name }}  </a>  {{ $student->last_name }}  {{ $student->age }} {{ $student->email }}
-        </li> --}}
+        <li>
+            {{ $student->first_name }} | {{ $student->last_name }} | {{ $student->age }} | {{ $student->email }}
+        </li>
     @endforeach
 
-    <label for="">Firstname:</label>
+    {{-- <label for="">Firstname:</label>
     <input type="text" value=" {{ $student->first_name }}">
 
     <br>
@@ -23,8 +23,7 @@
     <br>
     <label for="">Age:</label>
     <input type="text" value=" {{ $student->age }}">
-
-
+ --}}
 
     {{-- 
   @foreach ($students as $student)
@@ -32,6 +31,8 @@
             {{ $student-> $first_name }}  
         </li>
     @endforeach --}}
+
+
 
 </body>
 

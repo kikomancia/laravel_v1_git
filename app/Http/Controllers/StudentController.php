@@ -46,7 +46,7 @@ class StudentController extends Controller
         // //\dd( $data);
 
           ////specific fetching data
-        $data = Students::where('id', $id)->get();
+        $data = Students::where('age', $id)->get();
 
         return \view('students.index', ['students' => $data]);
 
