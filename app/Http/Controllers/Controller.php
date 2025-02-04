@@ -15,7 +15,7 @@ class Controller extends BaseController
     public function defaultPage(){
 
         return view('index')
-            ->with('title', 'Hello Tao!')
+            ->with('title', 'Tae Tao!')
             ->with('message', 'This is the index or default page of the Larvel project.') ;
     }
 
